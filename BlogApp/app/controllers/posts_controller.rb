@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
     
-    before_action :authenticate_user!
+    
+    before_action :authenticate_user!  
     
     def index
 
         @posts = current_user.posts.paginate(page: params[:page], per_page: 3)
     end
+    
+    def show
+        @post = Post.find(params[:id])
+        @user = User.find(params[:user_id])
+       
+    end 
+  
     
     def new
         @user = current_user
@@ -18,15 +26,13 @@ class PostsController < ApplicationController
         redirect_to user_posts_path
     end
     
-    def show
-        @post = Post.find(params[:id])
-        @user = User.find(params[:user_id])
-       
-    end    
+ 
+    
+
     
 private
 
 def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:title, :content, :avatar)
 end    
 end

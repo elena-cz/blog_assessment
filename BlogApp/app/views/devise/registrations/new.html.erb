@@ -17,36 +17,36 @@
 
 	<div class="margin-top-20">
 	
-		<%= f.text_field :first_name, placeholder: "First Name" %>
+		<%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
 	</div>
 
 	<div class="margin-top-20">
-				<%= f.text_field :last_name, placeholder: "Last Name" %>
+				<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
 	</div>
 
 	<div class="margin-top-20">
-		<%= f.text_field :email, placeholder: "Email Address" %>
+		<%= f.text_field :email, placeholder: "Email Address", class: "form-control" %>
 	</div>
 
 	<div class="margin-top-20">
 	    
-    <%= f.password_field :password, placeholder: "Password", autocomplete: "off" %>
-    <br />
+    <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "form-control" %>
+    
     <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
 	</div>
 
 	<div class="margin-top-20">
-	<%= f.password_field :password_confirmation, placeholder: "Confirm password", autocomplete: "off" %>
+	<%= f.password_field :password_confirmation, placeholder: "Confirm password", autocomplete: "off", class: "form-control" %>
 	</div>
 
 	<div class="margin-top-20">
-		<%= f.text_field :username, placeholder: "Username" %>
+		<%= f.text_field :username, placeholder: "Username", class: "form-control" %>
 	</div>
 
 	<div class="margin-top-20">
-		<%= f.text_area :about_me, placeholder: "About Me", size: "60x4" %>
+		<%= f.text_area :about_me, placeholder: "About Me", size: "60x4", class: "form-control" %>
 	</div>
 
 	<div class="margin-top-20">
