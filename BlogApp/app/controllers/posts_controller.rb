@@ -21,9 +21,18 @@ class PostsController < ApplicationController
     end
     
     def create
-        current_user.posts.create(post_params)
+        post = current_user.posts.create(post_params)
+    
         
-        redirect_to user_posts_path
+        if post.valid?
+			redirect_to user_posts_path
+		else
+			flash[:error] = "There was a problem saving the photo."
+			
+			redirect_to new_user_post_path
+			
+		end
+        
     end
     
  
